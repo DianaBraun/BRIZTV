@@ -47,17 +47,17 @@
 //         cy.get("button[type='submit']").click()
 //         //проверка через тоаст
 //     })
-//     it("NOT Authorize users with incorrect phone", function() {
-//         cy.visit("https://ottdevfront.briz.ua/")
-//         cy.contains("Увійти").click()
-//         cy.get("input[type='text']").type("80671919160")
-//         cy.get("input[type='password']").type("19111994q")
-//         cy.get("button[type='submit']").click()
-//         //проверка через тоаст
-//     })
-// })
+    it("NOT Authorize users with incorrect phone", function() {
+        cy.visit("https://ottdevfront.briz.ua/")
+        cy.contains("Увійти").click()
+        cy.get("input[type='text']").type("80671919160")
+        cy.get("input[type='password']").type("19111994q")
+        cy.get("button[type='submit']").click()
+        //проверка через тоаст
+    })
+})
 
-///<reference types="Cypress"/>
+///<reference types="Cypress"/> 
 
 it('By name', () => {
     cy.visit('https://ottdevfront.briz.ua/')
@@ -66,3 +66,4 @@ it('By name', () => {
     
 
 })
+
