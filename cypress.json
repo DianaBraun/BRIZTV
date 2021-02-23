@@ -1,6 +1,7 @@
 {
     "baseUrl": "https://ottdevfront.briz.ua/",
-    "projectId": "r8crt6"
+    "projectId": "r8crt6",
+    "ChromeWebSecurity": false
 }
 
 
