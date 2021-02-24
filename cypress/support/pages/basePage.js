@@ -1,8 +1,16 @@
 export class BasePage{
 
-    open(url){
-        cy.visit(url);
+    baseUrl       = "https://ottdevfront.briz.ua/";
+
+    navigate(path) {
+        cy
+            .visit(this.baseUrl + path)
     }
+    
+    open(url){
+        cy.visit(url)
+    }
+
     typePhoneNumberOrEmail(phoneNumber) {
         cy.get("input[type='text']")
             .type(phoneNumber)
@@ -11,9 +19,8 @@ export class BasePage{
         cy.get("input[type='password']")
             .type(password)
     }
-    clickSubmit() {
-        cy.get("button[type='submit']")
-            .click()
+    submit(){
+        cy.get("button[type='submit']").click()
     }
     checkAuthorization(toastMessage) {
         cy.get(".Toastify__toast-body ")
@@ -35,4 +42,5 @@ export class BasePage{
 }
 
 export const basePage = new BasePage()
+
 

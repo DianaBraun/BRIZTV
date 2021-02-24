@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/DianaBraun/BRIZTV.git"
   },
-
   "license": "ISC",
   "devDependencies": {
     "cypress": "^6.5.0"
@@ -19,4 +18,4 @@
     "url": "https://github.com/DianaBraun/BRIZTV/issues"
   },
   "homepage": "https://github.com/DianaBraun/BRIZTV#readme"
-  }
+}

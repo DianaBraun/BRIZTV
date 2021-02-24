@@ -1,11 +1,14 @@
-export class Registration {
+import { basePage } from "./basePage";
+
+export default class Registration {
+
     
     goToUserAgreement()
 
     goToAuthorization()
 
     registerNewAccount(){
-        
+
     }
 }
 

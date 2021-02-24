@@ -1,37 +1,44 @@
-export class Authorization {
-    // fb_email_input = 
-    // fb_passwd_input = 
-    // fb_login_btn = 
+import { basePage } from "./basePage"
 
-    checkForgotPassword() {
+export default class Authorization {
+
+    checkForgotPassword(numberOrEmail) {
         cy.get("a[class='l-forgot-pass']").click()
-        cy.get('.Modal__title').should('have.text', 'Відновлення пароля')
+        cy.get("input[name='login']").type(numberOrEmail)
+        cy.get("button[type='submit']").click()
+
     }
+
+    checkConfirmationMessage(toastMessage) {
+        cy.get(".Toastify__toast-body").should("have.text", toastMessage)
+    }
+
     checkRememberMe() {
+
         cy.get('[type="checkbox"]').should('have.attr', 'value', 'true')
         cy.get('[type="checkbox"]').uncheck({ force: true })
         cy.get('[type="checkbox"]').should('have.attr', 'value', 'false')
+
     }
     checkRegistrationLink() {
+
         cy.get("a[class='reg-link']").click()
         cy.get('.Modal__title').should('have.text', 'Реєстрація')
+
     }
     checkFacebookLogin() {
-        cy.visit("https://ottdevfront.briz.ua/")
-        cy.contains("Увійти").click()
-        cy.wait(5000)
+        cy.wait(2000)
         cy.get('.Modal__socials-btn').find('svg').eq(0)
             .click()
 
     }
 
     checkGoogleLogin() {
-        cy.visit("https://ottdevfront.briz.ua/")
-        cy.contains("Увійти").click()
-        cy.wait(5000)
+        cy.wait(2000)
         cy.get('.Modal__socials-btn').find('svg').eq(1)
             .click()
     }
 }
+
 export const authorize = new Authorization()
 
